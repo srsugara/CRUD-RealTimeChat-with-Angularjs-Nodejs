@@ -1,0 +1,15 @@
+myApp.controller('homeController',['$scope',function($scope){
+	$scope.myInterval=4000;
+	$scope.slides=[{
+		image:"img/1.jpg",
+		link:"https://www.youtube.com/watch?v=FYUQmm-xfIY&list=PLZm85UZQLd2RyFN1IQWuOk8gBt0aJHE1F&index=6"
+	},
+	{
+		image:"img/2.png",
+		link:"https://www.youtube.com/watch?v=707K94O-05k&index=7&list=PLZm85UZQLd2RyFN1IQWuOk8gBt0aJHE1F"
+	},
+	{
+		image:"img/3.jpg",
+		link:"https://www.youtube.com/watch?v=WoqA_CSc8kA&index=8&list=PLZm85UZQLd2RyFN1IQWuOk8gBt0aJHE1F"
+	}];
+}]);

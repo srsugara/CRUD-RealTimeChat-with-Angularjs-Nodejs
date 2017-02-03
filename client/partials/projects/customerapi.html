@@ -1,0 +1,73 @@
+<div class="row">
+	<div class="col-md-6">
+		<form class="well">
+			<div class="form-group">
+				<label for="firstname">Firstname</label>
+				<input type="text" class="form-control" id="firstname" name="" ng-model="form.firstname">
+			</div>
+			<div class="form-group">
+				<label for="lastname">Lastname</label>
+				<input type="text" class="form-control" id="lastname" name="" ng-model="form.lastname">
+			</div>
+			<div class="form-group">
+				<label for="Phone Number">Phone Number</label>
+				<input type="text" class="form-control" id="phone" name="" ng-model="form.phone">
+			</div>
+			<div class="form-group">
+				<label for="street">Street Address</label>
+				<input type="text" class="form-control" id="street" name="" ng-model="form.address.street">
+			</div>
+			<div class="form-group">
+				<label for="city">City</label>
+				<input type="text" class="form-control" id="city" name="" ng-model="form.address.city">
+			</div>
+			<div class="form-group">
+				<label for="state">State</label>
+				<input type="text" class="form-control" id="state" name="" ng-model="form.address.state">
+			</div>
+			<div class="form-group">
+				<label for="zip">Zip</label>
+				<input type="text" class="form-control" id="zip" name="" ng-model="form.address.zip">
+			</div>
+			<div class="row">
+				<button type="submit" class="btn btn-success" ng-click="addToDatabase()">Add Customer</button>
+			</div>
+		</form>		
+	</div>
+	<div class="col-md-6">
+		<table class="table table-hover">
+			<thead>
+				<th>
+					Name
+				</th>
+				<th>
+					Phone
+				</th>
+				<th>
+					Address
+				</th>
+				<th>
+					<i class="fa fa-trash" ng-click="deleteAll()"></i>
+				</th>
+			</thead>
+			<tr ng-repeat="customer in customers | startFrom:(currentPage-1)*pageSize | limitTo:pageSize">
+				<td>
+					{{customer.lastname}},{{customer.firstname}}
+				</td>
+				<td>
+					{{customer.phone}}
+				</td>
+				<td>
+					{{customer.address.street}}<br>
+					{{customer.address.city}},{{customer.address.state}}<br>
+					{{customer.address.zip}}
+				</td>
+				<td>
+					<i class="fa fa-trash" ng-click="delete((currentPage-1)*pageSize+$index)"></i>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<pagination total-items="customers.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+</div>

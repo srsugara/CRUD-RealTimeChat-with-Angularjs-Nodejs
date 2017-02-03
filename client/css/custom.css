@@ -1,0 +1,18 @@
+#about-image{
+	border-style: solid;
+	border-color: black;
+	border-width: 5px;
+}
+#about h2{
+	border-bottom: 2px solid black;
+}
+p{
+	text-indent: 40px;
+}
+
+tr.ng-enter{
+	animation:bounceInUp 1s;
+}
+tr.ng-leave{
+	animation:bounceOut 1s;
+}
